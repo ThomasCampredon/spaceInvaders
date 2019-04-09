@@ -67,7 +67,17 @@ public class SpaceInvaders {
 	private boolean aUnVaisseau() {
 		return vaisseau!=null;
 	}
+
+
+	public void deplacerVaisseauVersLaDroite() {
+		 if (!vaisseauEstALaBordureDroite()) 
+			 vaisseau.seDeplacerVersLaDroite();	
+	}
+
+
+	private boolean vaisseauEstALaBordureDroite() {
+		return vaisseau.abscisse() >= (longueur-1);
+	}
 	
-	
-	 
+		 
 }
