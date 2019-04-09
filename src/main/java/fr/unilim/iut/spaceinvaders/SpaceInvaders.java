@@ -7,6 +7,7 @@ public class SpaceInvaders {
 	private static final char MARQUE_FIN_LIGNE = '\n';
 	private static final char MARQUE_VIDE = '.';
 	private static final char MARQUE_VAISSEAU = 'V';
+	
 	int longueur;
     int hauteur;
 	private Vaisseau vaisseau;
@@ -77,6 +78,17 @@ public class SpaceInvaders {
 
 	private boolean vaisseauEstALaBordureDroite() {
 		return vaisseau.abscisse() >= (longueur-1);
+	}
+
+
+	public void deplacerVaisseauVersLaGauche() {
+		if (!vaisseauEstALaBordureGauche()) 
+			 vaisseau.seDeplacerVersLaGauche();
+	}
+
+
+	private boolean vaisseauEstALaBordureGauche() {
+		return vaisseau.abscisse() <= 0;
 	}
 	
 		 
