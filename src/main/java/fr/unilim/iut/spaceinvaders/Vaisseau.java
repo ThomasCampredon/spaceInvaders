@@ -1,5 +1,7 @@
 package fr.unilim.iut.spaceinvaders;
 
+import fr.unilim.iut.spaceinvaders.moteurjeu.Commande;
+
 public class Vaisseau {
 	Position origine;
 	Dimension dimension;
@@ -36,8 +38,12 @@ public class Vaisseau {
 	}
 
 
-	private boolean ordonneeLaPlusBasse(int y) {
+	public boolean ordonneeLaPlusBasse(int y) {
 		return this.origine.ordonnee()-this.dimension.hauteur()+1<=y;
+	}
+	
+	public int ordonneeLaPlusBasse() {
+		return this.origine.ordonnee()-this.dimension.hauteur()+1;
 	}
 
 
@@ -67,4 +73,16 @@ public class Vaisseau {
 		this.origine.changerOrdonnee(y);
     }
 
+
+	public Position getOrigine() {
+		return origine;
+	}
+
+
+	public Dimension getDimension() {
+		return dimension;
+	}
+
+
+	
 }
