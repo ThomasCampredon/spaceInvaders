@@ -1,9 +1,11 @@
 package fr.unilim.iut.spaceinvaders;
 
+import fr.unilim.iut.spaceinvaders.moteurjeu.Commande;
+import moteurJeu.Jeu;
 import utils.DebordementEspaceJeuException;
 import utils.HorsEspaceJeuException;
 
-public class SpaceInvaders {
+public class SpaceInvaders implements fr.unilim.iut.spaceinvaders.moteurjeu.Jeu {
 
 	private static final char MARQUE_FIN_LIGNE = '\n';
 	private static final char MARQUE_VIDE = '.';
@@ -79,6 +81,18 @@ public class SpaceInvaders {
 
 		vaisseau = new Vaisseau(longueurVaisseau, hauteurVaisseau);
 		vaisseau.positionner(x, y);
+	}
+
+	
+	@Override
+	public void evoluer(Commande commandeUser) {
+		this.vaisseau.deplacer(commande);
+		
+	}
+
+	@Override
+	public boolean etreFini() {
+		return false;
 	}
 
 }
