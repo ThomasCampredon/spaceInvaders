@@ -5,6 +5,7 @@ import fr.unilim.iut.spaceinvaders.moteurjeu.Commande;
 public class Vaisseau {
 	Position origine;
 	Dimension dimension;
+	private int vitesse;
 	
 	
 	public Vaisseau(int longueur, int hauteur, int x, int y) {
@@ -18,8 +19,14 @@ public class Vaisseau {
 	
 	
 	public Vaisseau(Dimension dimension, Position positionOrigine) {
+		this(dimension, positionOrigine, 1);
+    }
+	
+	
+	public Vaisseau(Dimension dimension, Position positionOrigine, int vitesse) {
 	    this.dimension = dimension;
 	    this.origine = positionOrigine;
+	    this.vitesse = vitesse;
     }
 	
 
@@ -35,6 +42,10 @@ public class Vaisseau {
 
 	private boolean ordonneeLaPlusHaute(int y) {
 		return y<=this.origine.ordonnee();
+	}
+	
+	public int ordonneeLaPlusHaute() {
+		return this.origine.ordonnee();
 	}
 
 
@@ -57,7 +68,7 @@ public class Vaisseau {
 	}
 
 	public void seDeplacerVersLaDroite() {
-		 this.origine.changerAbscisse(this.origine.abscisse()+1);	   	
+		 this.origine.changerAbscisse(this.origine.abscisse()+this.vitesse);	   	
 	}
 
 	public int abscisseLaPlusAGauche() {
@@ -65,7 +76,7 @@ public class Vaisseau {
 	}
 
 	public void seDeplacerVersLaGauche() {
-		 this.origine.changerAbscisse(this.origine.abscisse()-1);
+		 this.origine.changerAbscisse(this.origine.abscisse()-this.vitesse);
 	}
 
 	public void positionner(int x, int y) {
