@@ -7,6 +7,7 @@ import java.awt.Color;
 import fr.unilim.iut.spaceinvaders.SpaceInvaders;
 import fr.unilim.iut.spaceinvaders.Vaisseau;
 import fr.unilim.iut.spaceinvaders.Dimension;
+import fr.unilim.iut.spaceinvaders.Missile;
 import fr.unilim.iut.spaceinvaders.Position;
 
 
@@ -29,10 +30,27 @@ public class DessinSpaceInvaders implements DessinJeu {
 			crayon.fillRect(vaisseau.abscisseLaPlusAGauche(),
 					vaisseau.ordonneeLaPlusBasse(),//si probleme voire vers le milieu de : https://github.com/iblasquez/tdd_spaceInvaders/blob/master/enonces/SpaceInvaders_Spike_MoteurGraphique.md
 					vaisseau.getDimension().longueur(), vaisseau.getDimension().hauteur());
+			dessinerUnMissile(image);
 		}
 		else {
 			throw new AssertionError("vaisseau inexistant");
 		}
+	}
+	
+	public void dessinerUnMissile(BufferedImage image) {
+		if (this.jeu.aUnMissile()) {
+			
+			Missile missile = jeu.getMissile();
+			
+			Graphics2D crayon = (Graphics2D) image.getGraphics();
+			
+	
+			crayon.setColor(Color.blue);
+			crayon.fillRect(missile.abscisseLaPlusAGauche(),
+					missile.ordonneeLaPlusBasse(),//si probleme voire vers le milieu de : https://github.com/iblasquez/tdd_spaceInvaders/blob/master/enonces/SpaceInvaders_Spike_MoteurGraphique.md
+					missile.getDimension().longueur(), missile.getDimension().hauteur());
+		}
+		
 	}
 
 }
