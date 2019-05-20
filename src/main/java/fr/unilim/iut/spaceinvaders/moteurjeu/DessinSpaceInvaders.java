@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import fr.unilim.iut.spaceinvaders.model.Dimension;
+import fr.unilim.iut.spaceinvaders.model.Envahisseur;
 import fr.unilim.iut.spaceinvaders.model.Missile;
 import fr.unilim.iut.spaceinvaders.model.Position;
 import fr.unilim.iut.spaceinvaders.model.SpaceInvaders;
@@ -22,6 +23,7 @@ public class DessinSpaceInvaders implements DessinJeu {
 	
 	@Override
 	public void dessiner(BufferedImage image) {
+		dessinerUnEnvahisseur(image);
 		if (this.jeu.aUnVaisseau()) {
 			Vaisseau vaisseau = jeu.getVaisseau();
 			
@@ -50,6 +52,23 @@ public class DessinSpaceInvaders implements DessinJeu {
 			crayon.fillRect(missile.abscisseLaPlusAGauche(),
 					missile.ordonneeLaPlusBasse(),//si probleme voire vers le milieu de : https://github.com/iblasquez/tdd_spaceInvaders/blob/master/enonces/SpaceInvaders_Spike_MoteurGraphique.md
 					missile.getDimension().longueur(), missile.getDimension().hauteur());
+		}
+		
+	}
+	
+	
+	public void dessinerUnEnvahisseur(BufferedImage image) {
+		if (this.jeu.aUnEnvahisseur()) {
+			
+			Envahisseur envahisseur = jeu.getEnvahisseur();
+			
+			Graphics2D crayon = (Graphics2D) image.getGraphics();
+			
+	
+			crayon.setColor(Color.red);
+			crayon.fillRect(envahisseur.abscisseLaPlusAGauche(),
+					envahisseur.ordonneeLaPlusBasse(),//si probleme voire vers le milieu de : https://github.com/iblasquez/tdd_spaceInvaders/blob/master/enonces/SpaceInvaders_Spike_MoteurGraphique.md
+					envahisseur.getDimension().longueur(), envahisseur.getDimension().hauteur());
 		}
 		
 	}

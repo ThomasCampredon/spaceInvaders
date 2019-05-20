@@ -15,12 +15,21 @@ public class Constante {
     public static final int MISSILE_HAUTEUR = 14;
     public static final int MISSILE_VITESSE = 20;
     
+    //envahisseur
+    public static final int ENVAHISSEUR_ABSCISSE = 3;
+    public static final int ENVAHISSEUR_ORDONNEE = 20;
+    public static final int ENVAHISSEUR_LONGUEUR = 30;
+    public static final int ENVAHISSEUR_HAUTEUR = 20;
+    public static final int ENVAHISSEUR_VITESSE = 3;
+    
     
     //test espace de jeu
 	public static final char MARQUE_FIN_LIGNE = '\n';
 	public static final char MARQUE_VIDE = '.';
 	public static final char MARQUE_VAISSEAU = 'V';
 	public static final char MARQUE_MISSILE = 'M';
+	public static final char MARQUE_ENVAHISSEUR = 'O';
+	
 	
 	
 	
