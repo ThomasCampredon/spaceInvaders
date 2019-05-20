@@ -1,7 +1,9 @@
-package fr.unilim.iut.spaceinvaders.moteurjeu;
+package fr.unilim.iut.spaceinvaders;
 
-import fr.unilim.iut.spaceinvaders.Constante;
-import fr.unilim.iut.spaceinvaders.SpaceInvaders;
+import fr.unilim.iut.spaceinvaders.model.Constante;
+import fr.unilim.iut.spaceinvaders.model.SpaceInvaders;
+import fr.unilim.iut.spaceinvaders.moteurjeu.DessinSpaceInvaders;
+import fr.unilim.iut.spaceinvaders.moteurjeu.MoteurGraphique;
 
 
 

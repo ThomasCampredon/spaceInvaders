@@ -2,13 +2,14 @@ package fr.unilim.iut.spaceinvaders.moteurjeu;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.awt.Color;
 
-import fr.unilim.iut.spaceinvaders.SpaceInvaders;
-import fr.unilim.iut.spaceinvaders.Vaisseau;
-import fr.unilim.iut.spaceinvaders.Dimension;
-import fr.unilim.iut.spaceinvaders.Missile;
-import fr.unilim.iut.spaceinvaders.Position;
+import fr.unilim.iut.spaceinvaders.model.Dimension;
+import fr.unilim.iut.spaceinvaders.model.Missile;
+import fr.unilim.iut.spaceinvaders.model.Position;
+import fr.unilim.iut.spaceinvaders.model.SpaceInvaders;
+import fr.unilim.iut.spaceinvaders.model.Vaisseau;
+
+import java.awt.Color;
 
 
 public class DessinSpaceInvaders implements DessinJeu {
