@@ -1,23 +1,18 @@
 package fr.unilim.iut.spaceinvaders;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import utils.DebordementEspaceJeuException;
-import utils.HorsEspaceJeuException;
 import utils.MissileException;
 
 
-
+ 
 public class VaisseauTest {
 	private SpaceInvaders spaceinvaders;
 	
 	 @Before
 	    public void initialisation() {
-		    spaceinvaders = new SpaceInvaders(15, 10);
+		   spaceinvaders = new SpaceInvaders(15, 10);
 	    }
 	
 	

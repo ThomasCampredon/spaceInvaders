@@ -11,9 +11,9 @@ public class Constante {
     public static final int VAISSEAU_VITESSE = 17;
     
     //missile
-    public static final int MISSILE_LONGUEUR = 5;
-    public static final int MISSILE_HAUTEUR = 10;
-    public static final int MISSILE_VITESSE = 15;
+    public static final int MISSILE_LONGUEUR = 8;
+    public static final int MISSILE_HAUTEUR = 14;
+    public static final int MISSILE_VITESSE = 20;
     
     
     //test espace de jeu
