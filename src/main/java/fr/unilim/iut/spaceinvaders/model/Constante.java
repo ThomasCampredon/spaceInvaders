@@ -20,7 +20,7 @@ public class Constante {
     public static final int ENVAHISSEUR_ORDONNEE = 20;
     public static final int ENVAHISSEUR_LONGUEUR = 30;
     public static final int ENVAHISSEUR_HAUTEUR = 20;
-    public static final int ENVAHISSEUR_VITESSE = 3;
+    public static final int ENVAHISSEUR_VITESSE = 10;
     
     
     //test espace de jeu
@@ -31,6 +31,9 @@ public class Constante {
 	public static final char MARQUE_ENVAHISSEUR = 'O';
 	
 	
+	//déplacement
+	public static boolean versLaDroite = true;
+	public static boolean versLaGauche = false;
 	
 	
 	
