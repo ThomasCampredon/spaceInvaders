@@ -127,28 +127,55 @@ public class SpaceInvaders implements fr.unilim.iut.spaceinvaders.moteurjeu.Jeu 
 	
 	
 	
-	//block des methodes du jeu
+	// block des methodes du jeu
 	@Override
 	public void evoluer(Commande commande) {
 		if (commande.gauche) {
-            deplacerVaisseauVersLaGauche();
-        }
-		
-       if (commande.droite) {
-	        deplacerVaisseauVersLaDroite();
-       }
-       
-       if (commande.tir && !this.aUnMissile()) {
-           tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR),
+			deplacerVaisseauVersLaGauche();
+		}
+
+		if (commande.droite) {
+			deplacerVaisseauVersLaDroite();
+		}
+
+		if (commande.tir && !this.aUnMissile()) {
+			tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR),
 					Constante.MISSILE_VITESSE);
-	   }
-       if(aUnMissile()) {
-    	   this.deplacerMissile();
-       }
-       if(aUnEnvahisseur()) {
-    	   this.deplacerEnvahisseur();
-       }
-		
+		}
+		if (aUnMissile()) {
+			this.deplacerMissile();
+		}
+		if (aUnEnvahisseur()) {
+			this.deplacerEnvahisseur();
+		}
+
+		if (aUnMissile() && aUnEnvahisseur()) {
+			if (sontEnCollision(this.missile, this.envahisseur)) {
+				this.missile = null;
+				this.envahisseur = null;
+			}
+		}
+
+	}
+
+	public boolean collisionSurLesAbscisses(Sprite sprite1, Sprite sprite2) {
+		return collisionSurLesAbscisseADroite(sprite1,sprite2)||collisionSurLesAbscissesAGauche(sprite1,sprite2);
+	}
+
+	public boolean collisionSurLesAbscissesAGauche(Sprite sprite1, Sprite sprite2) {
+		return ((sprite1.abscisseLaPlusADroite()>=sprite2.abscisseLaPlusAGauche()) && (sprite1.abscisseLaPlusADroite()<=sprite2.abscisseLaPlusADroite()));
+	}
+
+	public boolean collisionSurLesAbscisseADroite(Sprite sprite1, Sprite sprite2) {
+		return ((sprite1.abscisseLaPlusAGauche()<=sprite2.abscisseLaPlusADroite()) && (sprite1.abscisseLaPlusAGauche()>=sprite2.abscisseLaPlusAGauche()));
+	}
+
+	public boolean collisionSurLesOrdonnees(Sprite sprite1, Sprite sprite2) {
+		return sprite1.ordonneeLaPlusBasse()<sprite2.ordonneeLaPlusHaute();
+	}
+	
+	public boolean sontEnCollision(Sprite sprite1, Sprite sprite2) {
+		return((collisionSurLesAbscisses(sprite1,sprite2)) && (collisionSurLesOrdonnees(sprite1,sprite2)));
 	}
 
 	@Override
