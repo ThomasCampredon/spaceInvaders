@@ -170,8 +170,16 @@ public class SpaceInvaders implements fr.unilim.iut.spaceinvaders.moteurjeu.Jeu 
 		return ((sprite1.abscisseLaPlusAGauche()<=sprite2.abscisseLaPlusADroite()) && (sprite1.abscisseLaPlusAGauche()>=sprite2.abscisseLaPlusAGauche()));
 	}
 
+	public boolean collisionSurLesOrdonneesInferieures(Sprite sprite1, Sprite sprite2) {
+		return ((sprite1.ordonneeLaPlusBasse()<=sprite2.ordonneeLaPlusHaute()) && (sprite1.ordonneeLaPlusBasse()>=sprite2.ordonneeLaPlusBasse()));
+	}
+	
+	public boolean collisionSurLesOrdonneesSuperieures(Sprite sprite1, Sprite sprite2) {
+		return ((sprite1.ordonneeLaPlusHaute()<=sprite2.ordonneeLaPlusBasse()) && (sprite1.ordonneeLaPlusHaute()>=sprite2.ordonneeLaPlusHaute()));
+	}
+	
 	public boolean collisionSurLesOrdonnees(Sprite sprite1, Sprite sprite2) {
-		return sprite1.ordonneeLaPlusBasse()<sprite2.ordonneeLaPlusHaute();
+		return collisionSurLesOrdonneesInferieures(sprite1, sprite2) || collisionSurLesOrdonneesSuperieures(sprite1, sprite2);
 	}
 	
 	public boolean sontEnCollision(Sprite sprite1, Sprite sprite2) {
