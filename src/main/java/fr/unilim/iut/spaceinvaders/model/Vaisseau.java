@@ -18,6 +18,8 @@ public class Vaisseau extends Sprite {
 		
 		return new Missile(dimensionMissile, positionOrigineMissile, vitesseMissile);
 	}
+	
+	
 
 
 	private Position calculerLaPositionDeTirDuMissile(Dimension dimensionMissile) {
